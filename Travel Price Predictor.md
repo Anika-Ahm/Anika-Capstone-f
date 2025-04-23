@@ -43,13 +43,10 @@ Linear regression is chosen for its interpretability and effectiveness with cont
 | Year | Year of observation | Integer |
 | Quarter | Quarter of the year (1-4) | Integer |
 | City Pair | Origin and destination cities | String |
-| citymarketid_1 |
-City market ID is an identification number assigned by US DOT to identify a city market. Use this field to consolidate airports serving the same city market | Integer |
-| citymarketid_2 | City market ID is an identification number assigned by US DOT to identify a city market. Use this field to consolidate airports serving the same city market | Integer |
-| city1 | 	
-City1 is used to consolidate airports serving the same city market | String |
-| city2 | 	
-City2 is used to consolidate airports serving the same city market |String |
+| citymarketid_1 |City market ID is an identification number assigned by US DOT to identify a city market. Use this field to consolidate airports serving the same city market | Integer |
+| citymarketid_2 |City market ID is an identification number assigned by US DOT to identify a city market. Use this field to consolidate airports serving the same city market | Integer |
+| city1 | City1 is used to consolidate airports serving the same city market |String|
+| city2 | City2 is used to consolidate airports serving the same city market |String |
 | cur_passengers | Current year passengers | Float |
 | cur_fare | Current year fare | Float |
 | ly_fare | Last year fare | Float |
@@ -85,45 +82,3 @@ City2 is used to consolidate airports serving the same city market |String |
 - Extend analysis to international flights
 - Add interactive dashboards for user exploration
 - Combine with hotel pricing models for full trip cost prediction
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,99 +1,129 @@
-# Capstone Template UPDATE
+# Travel Price Predictor: Find you next travel destination
+**Estimating Flight Costs Using Historical City-Pair Airfare Data**
+
+## Project Overview
+## Problem Area
+Flight prices are notoriously inconsistent—fluctuating due to demand, time of booking, seasonality, and destination popularity. These variations create challenges for budget-conscious travelers.
 
 
-This is a template repository for setting up your capstone project: it includes a simple folder structure and placeholder files for the most important assets you will be creating.
-
-## Usage
-
-1. Start a new GitHub repo using this template.
-2. Update your `LICENSE` file with date and owner.
-3. Update your `README.md` file to reflect the project - see a sample structure below and please refer to Synapse on what needs to be included here. 
-4. Set up and activate your conda environment:
-    - Create a new `conda` environment for your capstone project.
-    - Activate the environment and export:
-        ```bash
-        conda env export > conda.yml
-        ```
-    - Make sure re-export every time after you update the environment.
-    - You can reset your conda environment by running:
-        ```bash
-        conda env create -f conda.yml
-        conda activate <your-env-name>
-        ```
-5. Add your own notebooks in `./notebooks/` and remove placeholders.
-6. Add your own data in `./data/` and remove placeholder. Note: `.gitignore` will ignore the data folder when you push to github, save a copy of your raw and processed data, pickled models in a Google Drive folder and add the link in the `data_links.md` file.
-7. Add your project documents, figures, reports, presentation pdf's in the `./docs` and remove placeholders.
-8. Add your references (tutorials, papers, books etc.) in `./references`. 
-9. Add your own scripts in `./src/` and remove unnecessary folders.
-
-Feel free to rename the folder and customize the project structure to best fit your work - this template is just the starting point.
-
-------------------------------------------------------------------------------
-
-## Project Title
-=========================
-
-### Executive Summary
-
-... Define the problem
-... What is the data science opportunity
-... Key takeaways
-
-### Demo
-
-... Show your work:
-...     Data visualizations
-...     Interactive demo (e.g., `streamlit` app)
-...     Short video of users trying out the solution
+This project aims to build a predictive model that estimates the cost of air travel between U.S. cities based on historical airfare trends and trip characteristics. The ultimate goal is to help consumers make more informed booking decisions and help travel services optimize pricing strategi
 
 
-### Methodology
+## Stakeholders
 
-... High-level diagrams of entire process:
-...     various data processing steps
-...     various modelling directions
-...     various prototyping directions
+- Travelers planning budget-friendly trips
+- Airlines optimizing fare strategies
+- Travel agencies and booking platforms
+- Developers building travel planning tools
+
+## Data Science Approach
+
+We use **Linear Regression** to model airfare as a function of:
+
+- Travel quarter (seasonality)
+- City-pair popularity (passenger volume)
+- Price 
+
+Linear regression is chosen for its interpretability and effectiveness with continuous target variables like price.
+
+## Datasets
+
+**1. Consumer Airfare Report: Table 3 - City-Pair Markets With A Substantial increase In Average Fare**  
+[https://data.transportation.gov/Aviation/Consumer-Airfare-Report-Table-3-City-Pair-Markets-/hc34-r2dt/about_data]
 
 
-### Organization
+**2.Consumer Airfare Report: Table 4 - City-Pair Markets With A Substantial Decrease In Average Fare**  
+[https://data.transportation.gov/Aviation/Consumer-Airfare-Report-Table-4-City-Pair-Markets-/bpm3-b8r4/about_data]
 
-#### Repository 
 
-* `data` 
-    - contains link to copy of the dataset (stored in a publicly accessible cloud storage)
-    - saved copy of aggregated / processed data as long as those are not too large (> 10 MB)
+### Data Dictionary 
 
-* `model`
-    - `joblib` dump of final model(s)
+| Column Name | Description | Data Type |
+|------------|-------------|------------|
+| Year | Year of observation | Integer |
+| Quarter | Quarter of the year (1-4) | Integer |
+| City Pair | Origin and destination cities | String |
+| citymarketid_1 |
+City market ID is an identification number assigned by US DOT to identify a city market. Use this field to consolidate airports serving the same city market | Integer |
+| citymarketid_2 | City market ID is an identification number assigned by US DOT to identify a city market. Use this field to consolidate airports serving the same city market | Integer |
+| city1 | 	
+City1 is used to consolidate airports serving the same city market | String |
+| city2 | 	
+City2 is used to consolidate airports serving the same city market |String |
+| cur_passengers | Current year passengers | Float |
+| cur_fare | Current year fare | Float |
+| ly_fare | Last year fare | Float |
+| ly_passengers | Last year passengers | Float |
+| amount_change | Fare amount difference between current year and previous year | Float |
+| percent_change | Fare percentage difference between current and previous year| Float |
+| amount_change_pax | Passenger number difference between current year and previous year | Float |
+| percent_change_pax | Passenger percentage difference between current and previous year | Float |
 
-* `notebooks`
-    - contains all final notebooks involved in the project
+## 🛠️ Methodology
 
-* `docs`
-    - contains final report, presentations which summarize the project
+- **Data Cleaning** – Removing duplicates, droping unecessary colunms to simplify data. filtering for consistent city pairs
+- **Categorize** the models by fare price, city, and volumn of passesngers
+- **Modeling** – Fitting a linear regression model to predict average fare nxt year and logistic model to make desicions easier. 
+- **Visualization** – Displaying pricing trends over time and model accuracy
 
-* `references`
-    - contains papers / tutorials used in the project
+## 🎯 Expected Benefits
 
-* `src`
-    - Contains the project source code (refactored from the notebooks)
+- Help users understand when and where to book for the best airfare
+- Give travel companies insights into demand and pricing trends
+- Reduce uncertainty in travel budget planning
+- Help undecided Travelars
 
-* `.gitignore`
-    - Part of Git, includes files and folders to be ignored by Git version control
+## ⚠️ Limitations
 
-* `conda.yml`
-    - Conda environment specification
+- Best data for such models are Airline APIs, where thay have largers and more recent databases for more accurate model.  
+- U.S. domestic data only
+- External shocks like pandemics, recssesions are not modeled
 
-* `README.md`
-    - Project landing page (this page)
+## 🔮 Future Plans
 
-* `LICENSE`
-    - Project license
+- Scrape real-time pricing data for validation
+- Extend analysis to international flights
+- Add interactive dashboards for user exploration
+- Combine with hotel pricing models for full trip cost prediction
 
-#### Dataset
 
-... Google Drive links to datasets and pickled models
 
-### Credits & References
 
-... Include any personal learning
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -56,27 +56,27 @@ Linear regression is chosen for its interpretability and effectiveness with cont
 | amount_change_pax | Passenger number difference between current year and previous year | Float |
 | percent_change_pax | Passenger percentage difference between current and previous year | Float |
 
-## 🛠️ Methodology
+## Methodology
 
 - **Data Cleaning** – Removing duplicates, droping unecessary colunms to simplify data. filtering for consistent city pairs
 - **Categorize** the models by fare price, city, and volumn of passesngers
 - **Modeling** – Fitting a linear regression model to predict average fare nxt year and logistic model to make desicions easier. 
 - **Visualization** – Displaying pricing trends over time and model accuracy
 
-## 🎯 Expected Benefits
+## Expected Benefits
 
 - Help users understand when and where to book for the best airfare
 - Give travel companies insights into demand and pricing trends
 - Reduce uncertainty in travel budget planning
 - Help undecided Travelars
 
-## ⚠️ Limitations
+## Limitations
 
 - Best data for such models are Airline APIs, where thay have largers and more recent databases for more accurate model.  
 - U.S. domestic data only
 - External shocks like pandemics, recssesions are not modeled
 
-## 🔮 Future Plans
+## Future Plans
 
 - Scrape real-time pricing data for validation
 - Extend analysis to international flights

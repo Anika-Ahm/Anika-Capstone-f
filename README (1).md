@@ -1,4 +1,4 @@
-# Travel Assistant: Find your next travel destination,Estimating Flight Costs & demand. 
+# Travel Price Predictor: Find you next travel destination Estimating Flight Costs Using Historical City-Pair Airfare Data  
 *Anika Ahmed* | *Math 37700* | *Spring / 2025*
 
 ---
@@ -13,19 +13,17 @@
 7. [Usage](#usage)  
 8. [Results & Deliverables](#results--deliverables)  
 9. [Slide Deck](#slide-deck)  
-10.[Contributing](#contributing)  
-11.[License](#license)  
+10. [Contributing](#contributing)  
+11. [License](#license)  
 
 ---
+
 ## Project Overview  
-
-
 **Problem Statement**  
-> Flight prices are notoriously inconsistent—fluctuating due to demand, time of booking, seasonality, and route popularity. These variations create challenges for budget-conscious travelers.  
+> Flight prices are notoriously inconsistent—fluctuating due to demand, time of booking, seasonality, and destination popularity. These variations create challenges for budget-conscious travelers.  
 
 **Proposed Solution**  
-> This project uses regression modeling to predict passenger demand on various U.S. flight routes based on features like fare price, historical passenger counts, seasonality (quarter), and route identifiers. Travelever will be able to **predict price**, **evaluate demand** of their flight, 
-The workflow includes data cleaning, one-hot encoding of city pair routes, exploratory data analysis (EDA), and the application of baseline (linear regression) and advanced models (Random Forest, decision tree, and logistic regression). Visualizations such as scatter plots, feature importance charts, and predicted vs. actual comparisons help interpret model performance and identify the most popular predicted routes. Final outputs include both a predictive model and actionable insights for route-level demand. 
+> This project uses regression modeling to predict passenger demand on various U.S. flight routes based on features like fare price, historical passenger counts, seasonality (quarter), and route identifiers. The workflow includes data cleaning, one-hot encoding of city pair routes, exploratory data analysis (EDA), and the application of baseline (linear regression) and advanced models (Random Forest). Visualizations such as scatter plots, feature importance charts, and predicted vs. actual comparisons help interpret model performance and identify the most popular predicted routes. Final outputs include both a predictive model and actionable insights for route-level demand. 
 
 **Impact**  
 - Travelers planning budget-friendly trips
@@ -33,15 +31,14 @@ The workflow includes data cleaning, one-hot encoding of city pair routes, explo
 - Travel agencies and booking platforms
 - Developers building travel planning tools  
 
+
+
 ---
 
 ## Data Description  
 - **Source:**  Department of Traportation  
-- **Raw Files:** two Located under `data/raw/` 
-1.(`Consumer_Airfare_Report__Table_3_-_City-Pair_Markets_With_A_Substantial_Increase_In_Average_Fare_20250421.csv`) 
-2. (`Consumer_Airfare_Report__Table_4_-_City-Pair_Markets_With_A_Substantial_Increase_In_Average_Fare_20250421.csv`)   
-- **Processed Files:** two datasets are join into one `data/processed/` under the name `(data_clean.csv)`
-
+- **Raw Files:** two Located under `data/raw/` (e.g., `transactions.csv`, `users.json`)  
+- **Processed Files:** two datasets are join into one `data/processed/`
 
 ## Raw Data Dictionary 
 
@@ -69,7 +66,9 @@ The workflow includes data cleaning, one-hot encoding of city pair routes, explo
 |-----------|-------------|
 | `data\raw\Consumer_Airfare_Report__Table_3_-_City-Pair_Markets_With_A_Substantial_Increase_In_Average_Fare_20250421.csv` | Original full dataset |
 | `data\raw\Consumer_Airfare_Report__Table_4_-_City-Pair_Markets_With_A_Substantial_Decrease_In_Average_Fare_20250421.csv` | Original full dataset |
-| `data/Processed/data_clean.csv` | Cleaned & feature‑engineered training set |
+| `data/processed/train.csv` | Cleaned & feature‑engineered training set |
+| `data/processed/test.csv`  | Cleaned & feature‑engineered test set |
+
 
 ---
 
@@ -145,13 +144,14 @@ The workflow includes data cleaning, one-hot encoding of city pair routes, explo
 ---
 
 ## Results & Deliverables  
+- **Final Model** – stored at `outputs/models/best_model.pkl`  (OPTIONAL)
 - **Key Figures** – located in `outputs/figures/` (e.g., feature importance, ROC curve)  
 - **Metrics Summary** – documented in notebooks and slide deck  
 
 ---
 
 ## Slide Deck  
-*Location:* `D:\spring 25\appiled stat\anika Sprint 1\slides\Travel.pdf`  
+*Location:* `/slides/Capstone_Final_Presentation.pdf`  
 Five slides covering: overview, data & preprocessing, key insights, model results, demo/design & next steps.
 
 ---

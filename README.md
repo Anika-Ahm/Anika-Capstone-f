@@ -37,7 +37,7 @@
 
 ## Data Description  
 - **Source:**  Department of Traportation  
-- **Raw Files:** two Located under `data/raw/` (e.g., `transactions.csv`, `users.json`)  
+- **Raw Files:** two Located under `data/raw/`
 - **Processed Files:** two datasets are join into one `data/processed/`
 
 ## Raw Data Dictionary 
